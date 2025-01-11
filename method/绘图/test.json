@@ -81,12 +81,6 @@
       "type": "text",
       "default": "./logs/log.txt",
       "description": "训练日志输出路径"
-    },
-    {
-      "name": "结果输出框",
-      "type": "output_box",
-      "default_height": 200,
-      "description": "显示print函数的输出结果"
     }
     ]
   }
