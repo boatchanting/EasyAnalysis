@@ -1,5 +1,3 @@
-├── .vscode/
-|   └── settings.json
 ├── code/
 |   ├── analysis/
 |   |   ├── algorithm_loader.py
@@ -23,9 +21,7 @@
 |   ├── __init__.py
 ├── data/
 ├── data_analysis.py
-├── data_analysis原.py
 ├── data_loader.py
-├── data_loader原.py
 ├── data_preview.py
 ├── DL/
 |   ├── detect_encoding.py
@@ -36,27 +32,43 @@
 |   ├── load_stylesheet.py
 |   ├── set_window_size.py
 |   ├── __init__.py
+├── docs/
+|   ├── log.md
+|   ├── 思想.md
+|   ├── 控件类型.md
+|   ├── 撰写算法.md
+|   ├── 撰写算法prompt.md
+|   └── 文件树.md
 ├── DP/
-├── example/
-|   ├── example.xlsx
-|   └── sample_course_data.csv
 ├── file_tree.txt
-├── log.md
+├── LICENCE
 ├── main.py
 ├── method/
 |   ├── 机器学习/
 |   |   ├── BP神经网络分类.json
 |   |   ├── BP神经网络分类.py
+|   |   ├── KNN分类.json
+|   |   ├── KNN分类.py
 |   |   ├── KNN回归.json
 |   |   ├── KNN回归.py
 |   |   ├── XGBoost分类.json
 |   |   ├── XGBoost分类.py
-|   |   ├── 决策树.json
-|   |   ├── 决策树.py
+|   |   ├── 决策树回归.json
+|   |   ├── 决策树回归.py
 |   |   ├── 支持向量机分类（SVM）.json
 |   |   ├── 支持向量机分类（SVM）.py
 |   |   ├── 随机森林 .json
 |   |   └── 随机森林.py
+|   ├── 机器学习（简陋版）/
+|   |   ├── 机器学习分类/
+|   |   |   ├── 决策树分类.json
+|   |   |   └── 决策树分类.py
+|   |   └── 机器学习回归/
+|   |       ├── 决策树回归.json
+|   |       └── 决策树回归.py
+|   ├── 相关性分析/
+|   |   ├── 斯皮尔曼秩相关系数分析.json
+|   |   └── 斯皮尔曼秩相关系数分析.py
 |   └── 绘图/
 |       ├── test.json
 |       ├── 折线图（1列）.json
@@ -67,13 +79,9 @@
 |       ├── 条形堆积图（多列）.py
 |       ├── 直方图（1列）.json
 |       └── 直方图（1列）.py
+├── README.md
 ├── requirements.txt
 ├── styles/
 |   ├── data_loader.qss
 |   └── main.qss
-├── test折线图.py
 ├── 启动.bat
-├── 思想.md
-├── 撰写算法.md
-├── 文件树.md
-└── 生成文件树.py
