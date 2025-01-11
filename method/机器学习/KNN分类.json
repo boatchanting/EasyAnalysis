@@ -1,0 +1,68 @@
+{
+    "algorithm": "KNN分类",
+    "description": "使用KNN分类算法对数据进行分类",
+    "parameters": [
+      {
+        "name": "条件列名",
+        "type": "multi_column_select",
+        "function": "condition_columns",
+        "required": true,
+        "description": "请选择作为特征的列名（支持多选）"
+      },
+      {
+        "name": "目标列",
+        "type": "column_select",
+        "function": "target_column",
+        "required": true,
+        "description": "请选择目标列（标签列）"
+      },
+      {
+        "name": "邻居数",
+        "type": "number",
+        "function": "n_neighbors",
+        "default": 5,
+        "range": [1, 100],
+        "description": "KNN中邻居的数量"
+      },
+      {
+        "name": "算法类型",
+        "type": "combo_box",
+        "function": "algorithm",
+        "options": ["auto", "ball_tree", "kd_tree", "brute"],
+        "default": "auto",
+        "description": "选择计算距离的算法"
+      },
+      {
+        "name": "距离度量的p值",
+        "type": "number",
+        "function": "p",
+        "default": 2,
+        "range": [1, 10],
+        "description": "距离度量中的p值，p=2为欧几里得距离"
+      },
+      {
+        "name": "距离度量方式",
+        "type": "combo_box",
+        "function": "metric",
+        "options": ["minkowski", "euclidean", "manhattan", "chebyshev", "seuclidean", "mahalanobis"],
+        "default": "minkowski",
+        "description": "选择距离度量方式"
+      },
+      {
+        "name": "是否可视化结果",
+        "type": "boolean",
+        "function": "visualize",
+        "default": false,
+        "description": "选择是否可视化分类结果"
+      },
+      {
+        "name": "随机种子",
+        "type": "number",
+        "function": "random_state",
+        "default": 42,
+        "range": [0, 100000000],
+        "description": "设置随机种子以确保结果可复现"
+      }
+    ]
+}
+  
