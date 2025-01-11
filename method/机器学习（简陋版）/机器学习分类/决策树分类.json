@@ -1,0 +1,51 @@
+{
+    "algorithm": "决策树分类",
+    "description": "使用决策树分类算法对数据进行分类",
+    "parameters": [
+      {
+        "name": "条件列名",
+        "type": "multi_column_select",
+        "function": "condition_columns",
+        "required": true,
+        "description": "请选择作为特征的列名（支持多选）"
+      },
+      {
+        "name": "目标列",
+        "type": "column_select",
+        "function": "target_column",
+        "required": true,
+        "description": "请选择目标列（标签列）"
+      },
+      {
+        "name": "测试集占比",
+        "type": "float",
+        "function": "test_size",
+        "default": 0.2,
+        "range": [0.01, 0.99],
+        "description": "设置训练集和测试集的比例（默认为0.8的训练集和0.2的测试集）"
+      },
+      {
+        "name": "是否进行数据洗牌",
+        "type": "boolean",
+        "function": "shuffle",
+        "default": false,
+        "description": "选择是否在划分数据集之前洗牌数据"
+      },
+      {
+        "name": "是否启用交叉验证",
+        "type": "boolean",
+        "function": "cross_validation",
+        "default": false,
+        "description": "选择是否启用交叉验证"
+      },
+      {
+        "name": "随机种子",
+        "type": "number",
+        "function": "random_state",
+        "default": 42,
+        "range": [0, 100000000],
+        "description": "设置随机种子以确保结果可复现"
+      }
+    ]
+  }
+  
