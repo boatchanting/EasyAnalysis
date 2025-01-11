@@ -1,0 +1,35 @@
+{
+    "algorithm": "斯皮尔曼秩相关系数分析",
+    "description": "计算并可视化斯皮尔曼相关系数矩阵",
+    "parameters": [
+      {
+        "name": "条件列名",
+        "type": "multi_column_select",
+        "function": "condition_columns",
+        "required": true,
+        "description": "请选择作为特征的列名（支持多选）"
+      },
+      {
+        "name": "目标列",
+        "type": "column_select",
+        "function": "target_column",
+        "required": true,
+        "description": "请选择目标列（标签列）"
+      },
+      {
+        "name": "是否启用可视化",
+        "type": "boolean",
+        "function": "visualize",
+        "default": false,
+        "description": "选择是否启用热力图可视化"
+      },
+      {
+        "name": "图表名称",
+        "type": "text",
+        "function": "chart_title",
+        "default": "Spearman Correlation Heatmap",
+        "description": "可视化图表的标题"
+      }
+    ]
+  }
+  
