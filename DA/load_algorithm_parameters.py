@@ -179,32 +179,7 @@ def load_algorithm_parameters(self):
                 
                 # 保存控件
                 self.parameter_widgets[param['name']] = widget
-                self.parameter_layout.addWidget(widget)
-            elif param['type'] == 'output_box':
-                """
-                结果输出框控件:
-                json配置示例
-                {
-                    "name": "结果输出框",
-                    "type": "output_box",
-                    "default_height": 200,
-                    "description": "显示print函数的输出结果"
-                }
-                """
-                widget = QTextEdit()
-                
-                # 设置默认高度
-                widget.setFixedHeight(param.get('default_height', 200))
-                
-                # 允许用户调整控件高度
-                widget.setSizePolicy(QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding))
-                
-                # 设置占位符文本
-                widget.setPlaceholderText(f"{param['description']}")
-                
-                # 保存控件
-                self.parameter_widgets[param['name']] = widget
-                self.parameter_layout.addWidget(widget)
+                self.parameter_layout.addWidget(widget)            
 
                    
             else:
