@@ -1,10 +1,19 @@
 # DA/run_analysis.py
 
-import os
-import json
+import io,os,sys,json
 import importlib
 from PyQt5.QtWidgets import QComboBox, QLineEdit, QSpinBox, QCheckBox, QListWidget, QPushButton
 from PyQt5.QtGui import QDoubleValidator, QIntValidator
+
+class TextCapture(io.StringIO):
+    def __init__(self, text_widget):
+        super().__init__()
+        self.text_widget = text_widget
+
+    def write(self, message):
+        super().write(message)
+        # 每次捕获到输出信息时，更新到 QTextEdit 中
+        self.text_widget.append(message)  # 使用 append 来追加文本
 
 def run_analysis(self):
     """
@@ -36,6 +45,7 @@ def run_analysis(self):
 
     # 收集用户输入的参数，并映射到 run 函数的参数名称
     params = {}
+    output_widget = None
     for param in config["parameters"]:
         param_name = param["name"]
         param_function = param["function"]  # 从配置文件获取函数名
@@ -66,6 +76,11 @@ def run_analysis(self):
             elif isinstance(widget, QPushButton):
                 params[param_function] = widget.property("selected_color") or param.get('default', '#FFFFFF')
 
+    # 创建一个用于捕获 print 输出的 TextCapture 实例，并重定向标准输出
+    if output_widget:
+        capture = TextCapture(output_widget)
+        sys.stdout = capture  # 重定向标准输出
+
     # 动态加载算法脚本
     try:
         spec = importlib.util.spec_from_file_location(config['algorithm'], algorithm_script_path)
@@ -77,3 +92,6 @@ def run_analysis(self):
         self.status_label.setText(f"算法 {config['algorithm']} 执行成功")
     except Exception as e:
         self.status_label.setText(f"算法执行失败：{e}")
+    finally:
+        sys.stdout = sys.__stdout__
+
