@@ -1,0 +1,80 @@
+{
+    "algorithm": "test",
+    "description": "测试用",
+    "parameters": [
+      {
+        "name": "条件列名",
+        "type": "multi_column_select",
+        "function": "condition_columns",
+        "required": true,
+        "description": "请选择作为特征的列名（支持多选）"
+      },
+      {
+        "name": "目标列",
+        "type": "column_select",
+        "function": "target_column",
+        "required": true,
+        "description": "请选择目标列（标签列）"
+      },
+      {
+        "name": "树的数量",
+        "type": "number",
+        "function": "n_estimators",
+        "default": 100,
+        "range": [10, 500],
+        "description": "随机森林中树的数量"
+      },
+      {
+        "name": "最大深度",
+        "type": "number",
+        "function": "max_depth",
+        "default": 1,
+        "range": [1, 100],
+        "description": "每棵树的最大深度"
+      },
+      {
+        "name": "随机种子",
+        "type": "number",
+        "function": "random_state",
+        "default": 42,
+        "range": [0, 100000000],
+        "description": "设置随机种子以确保结果可复现"
+      },
+      {
+        "name": "颜色选择",
+        "type": "color",
+        "function": "color_choice",
+        "description": "请选择一个颜色"
+      },
+      {
+        "name": "是否启用特征选择",
+        "type": "boolean",
+        "function": "feature_selection_enabled",
+        "default": true,
+        "description": "选择是否启用特征选择"
+      },
+      {
+        "name": "启用交叉验证",
+        "type": "boolean",
+        "function": "cross_validation_enabled",
+        "default": false,
+        "description": "选择是否启用交叉验证"
+      },
+      {
+        "name": "学习率",
+        "type": "decimal_input",
+        "function": "learning_rate",
+        "default": 0.01,
+        "range": [0.0001, 1],
+        "description": "设置学习率（范围：0.0001 到 1）"
+      },
+      {
+        "name": "距离度量方式",
+        "type": "combo_box",
+        "options": ["minkowski", "euclidean", "manhattan", "chebyshev", "seuclidean", "mahalanobis"],
+        "default": "minkowski",
+        "description": "选择距离度量方式"
+    }    
+    ]
+  }
+  

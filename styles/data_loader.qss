@@ -1,0 +1,37 @@
+/* data_loader.qss */
+
+QWidget {
+    background: qlineargradient(90deg, #B2EBF2 0%, #81D4FA 100%);
+    font-size: 14pt; 
+    padding: 20px;
+    height: 100%;
+}
+
+/* 样式化按钮 */
+QPushButton {
+    background-color: #81D4FA;
+    border: 2px solid #81D4FA;
+    border-radius: 20px;
+    font-size: 14pt; 
+    padding: 10px;
+    color: white;
+    text-align: center;
+    min-height: 80%;
+}
+
+QPushButton:hover {
+    background-color: #4FC3F7;
+    border-color: #4FC3F7;
+}
+
+/* 样式化标签 */
+QLabel {
+    font-size: 14pt;
+    color: #01579B;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+    min-height: 10%;
+}
+
+

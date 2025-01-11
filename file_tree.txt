@@ -1,0 +1,79 @@
+├── .vscode/
+|   └── settings.json
+├── code/
+|   ├── analysis/
+|   |   ├── algorithm_loader.py
+|   |   ├── analysis_runner.py
+|   |   ├── parameter_builder.py
+|   |   ├── utils.py
+|   |   ├── __init__.py
+|   ├── loader/
+|   |   ├── ui.py
+|   |   └── __init__.py
+|   ├── __init__.py
+├── DA/
+|   ├── clear_layout.py
+|   ├── find_tree_item.py
+|   ├── init_ui.py
+|   ├── load_algorithms.py
+|   ├── load_algorithm_parameters.py
+|   ├── run_analysis.py
+|   ├── select_color.py
+|   ├── update_columns.py
+|   ├── __init__.py
+├── data/
+├── data_analysis.py
+├── data_analysis原.py
+├── data_loader.py
+├── data_loader原.py
+├── data_preview.py
+├── DL/
+|   ├── detect_encoding.py
+|   ├── drag_enter_event.py
+|   ├── drop_event.py
+|   ├── init_ui.py
+|   ├── load_data.py
+|   ├── load_stylesheet.py
+|   ├── set_window_size.py
+|   ├── __init__.py
+├── DP/
+├── example/
+|   ├── example.xlsx
+|   └── sample_course_data.csv
+├── file_tree.txt
+├── log.md
+├── main.py
+├── method/
+|   ├── 机器学习/
+|   |   ├── BP神经网络分类.json
+|   |   ├── BP神经网络分类.py
+|   |   ├── KNN回归.json
+|   |   ├── KNN回归.py
+|   |   ├── XGBoost分类.json
+|   |   ├── XGBoost分类.py
+|   |   ├── 决策树.json
+|   |   ├── 决策树.py
+|   |   ├── 支持向量机分类（SVM）.json
+|   |   ├── 支持向量机分类（SVM）.py
+|   |   ├── 随机森林 .json
+|   |   └── 随机森林.py
+|   └── 绘图/
+|       ├── test.json
+|       ├── 折线图（1列）.json
+|       ├── 折线图（1列）.py
+|       ├── 散点图（2列）.json
+|       ├── 散点图（2列）.py
+|       ├── 条形堆积图（多列）.json
+|       ├── 条形堆积图（多列）.py
+|       ├── 直方图（1列）.json
+|       └── 直方图（1列）.py
+├── requirements.txt
+├── styles/
+|   ├── data_loader.qss
+|   └── main.qss
+├── test折线图.py
+├── 启动.bat
+├── 思想.md
+├── 撰写算法.md
+├── 文件树.md
+└── 生成文件树.py

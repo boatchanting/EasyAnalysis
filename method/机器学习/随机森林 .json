@@ -1,0 +1,44 @@
+{
+  "algorithm": "随机森林",
+  "description": "使用随机森林分类算法对数据进行分类",
+  "parameters": [
+    {
+      "name": "条件列名",
+      "type": "multi_column_select",
+      "function": "condition_columns",
+      "required": true,
+      "description": "请选择作为特征的列名（支持多选）"
+    },
+    {
+      "name": "目标列",
+      "type": "column_select",
+      "function": "target_column",
+      "required": true,
+      "description": "请选择目标列（标签列）"
+    },
+    {
+      "name": "树的数量",
+      "type": "number",
+      "function": "n_estimators",
+      "default": 100,
+      "range": [10, 500],
+      "description": "随机森林中树的数量"
+    },
+    {
+      "name": "最大深度",
+      "type": "number",
+      "function": "max_depth",
+      "default": 1,
+      "range": [1, 100],
+      "description": "每棵树的最大深度"
+    },
+    {
+      "name": "随机种子",
+      "type": "number",
+      "function": "random_state",
+      "default": 42,
+      "range": [0, 100000000],
+      "description": "设置随机种子以确保结果可复现"
+    }
+  ]
+}
