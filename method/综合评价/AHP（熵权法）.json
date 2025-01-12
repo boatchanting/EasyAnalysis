@@ -1,0 +1,35 @@
+{
+    "algorithm": "AHP（熵权法）",
+    "description": "使用熵权法对多指标进行加权分析",
+    "parameters": [
+      {
+        "name": "正向指标",
+        "type": "multi_column_select",
+        "function": "positive_columns",
+        "required": true,
+        "description": "请选择定量变量作为正向指标（正向指标加负向指标至少2个）"
+      },
+      {
+        "name": "负向指标",
+        "type": "multi_column_select",
+        "function": "negative_columns",
+        "required": true,
+        "description": "请选择定量变量作为正向指标（正向指标加负向指标至少2个）"
+      },
+      {
+        "name": "是否输出权重文件",
+        "type": "boolean",
+        "function": "output_weights",
+        "default": false,
+        "description": "是否选择输出权重文件"
+      },
+      {
+        "name": "权重文件输出路径",
+        "type": "text",
+        "function": "output_path",
+        "default": "./output/AHP/weights.txt",
+        "description": "如果选择输出权重文件，请设置文件路径（支持绝对路径和相对路径）"
+      }
+    ]
+  }
+  
