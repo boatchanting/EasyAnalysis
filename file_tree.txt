@@ -1,14 +1,3 @@
-├── code/
-|   ├── analysis/
-|   |   ├── algorithm_loader.py
-|   |   ├── analysis_runner.py
-|   |   ├── parameter_builder.py
-|   |   ├── utils.py
-|   |   ├── __init__.py
-|   ├── loader/
-|   |   ├── ui.py
-|   |   └── __init__.py
-|   ├── __init__.py
 ├── DA/
 |   ├── clear_layout.py
 |   ├── find_tree_item.py

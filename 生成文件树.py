@@ -13,7 +13,7 @@ def generate_file_tree_recursive(dir_path, current_depth, max_depth, file, prefi
         item_path = os.path.join(dir_path, item)
         
         # Skip __pycache__ folder, .git folder, .vscode folder, and 生成文件树.py file
-        if item in ['__pycache__', '.git', '.vscode', '生成文件树.py',".gitignore","data_loader原.py","data_analysis原.py","example","test","test折线图.py"]:
+        if item in ['__pycache__', '.git', '.vscode', '生成文件树.py',".gitignore","data_loader原.py","data_analysis原.py","example","test","test折线图.py","code"]:
             continue
         
         if os.path.isdir(item_path):
