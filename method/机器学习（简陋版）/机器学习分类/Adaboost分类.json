@@ -1,0 +1,65 @@
+{
+    "algorithm": "Adaboost分类",
+    "description": "使用Adaboost分类算法对数据进行分类",
+    "parameters": [
+      {
+        "name": "目标列",
+        "type": "column_select",
+        "function": "target_column",
+        "required": true,
+        "description": "请选择目标列（标签列）"
+      },
+      {
+        "name": "条件列名",
+        "type": "multi_column_select",
+        "function": "condition_columns",
+        "required": true,
+        "description": "请选择作为特征的列名（支持多选）"
+      },
+      {
+        "name": "是否打乱数据",
+        "type": "boolean",
+        "function": "shuffle",
+        "default": true,
+        "description": "是否在训练前打乱数据顺序"
+      },
+      {
+        "name": "训练集占比",
+        "type": "float",
+        "function": "train_ratio",
+        "default": 0.8,
+        "range": [0.5, 0.95],
+        "description": "设置训练集所占比例，范围在0.5到0.95之间"
+      },
+      {
+        "name": "是否交叉验证",
+        "type": "boolean",
+        "function": "cross_validate",
+        "default": false,
+        "description": "是否启用交叉验证"
+      },
+      {
+        "name": "随机种子",
+        "type": "number",
+        "function": "random_state",
+        "default": 42,
+        "range": [0, 100000000],
+        "description": "设置随机种子以确保结果可复现"
+      },
+      {
+        "name": "是否导出结果",
+        "type": "boolean",
+        "function": "export_results",
+        "default": false,
+        "description": "是否导出结果到文件"
+      },
+      {
+        "name": "结果输出路径",
+        "type": "text",
+        "function": "output_path",
+        "default": ".\\output\\Adaboost分类\\{datetime}.txt",
+        "description": "结果导出路径，支持使用 {datetime} 占位符"
+      }
+    ]
+  }
+  

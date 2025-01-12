@@ -1,6 +1,6 @@
 {
-    "algorithm": "Adaboost分类",
-    "description": "使用Adaboost分类算法对数据进行分类",
+    "algorithm": "梯度提升树",
+    "description": "使用梯度提升树分类算法对数据进行分类",
     "parameters": [
       {
         "name": "目标列",
@@ -28,8 +28,8 @@
         "type": "float",
         "function": "train_ratio",
         "default": 0.8,
-        "range": [0.5, 0.95],
-        "description": "设置训练集所占比例，范围在0.5到0.95之间"
+        "range": [0.0, 1.0],
+        "description": "设置训练集所占比例，推荐范围在0.5到0.95之间"
       },
       {
         "name": "是否交叉验证",
@@ -47,6 +47,78 @@
         "description": "设置随机种子以确保结果可复现"
       },
       {
+        "name": "损失函数",
+        "type": "combo_box",
+        "function": "loss_function",
+        "options": ["deviance", "exponential"],
+        "default": "deviance",
+        "description": "选择损失函数（deviance为对数损失，exponential为指数损失）"
+      },
+      {
+        "name": "节点分裂评价准则",
+        "type": "combo_box",
+        "function": "criterion",
+        "options": ["friedman_mse", "mse", "mae"],
+        "default": "friedman_mse",
+        "description": "选择节点分裂的评价准则"
+      },
+      {
+        "name": "基学习器数量",
+        "type": "number",
+        "function": "n_estimators",
+        "default": 100,
+        "range": [50, 1000],
+        "description": "设置基学习器的数量"
+      },
+      {
+        "name": "学习率",
+        "type": "float",
+        "function": "learning_rate",
+        "default": 0.1,
+        "range": [0.001, 1.0],
+        "description": "设置学习率（控制每个基学习器的贡献）"
+      },
+      {
+        "name": "无放回采样比例",
+        "type": "float",
+        "function": "subsample",
+        "default": 1.0,
+        "range": [0.5, 1.0],
+        "description": "设置无放回采样比例，控制每个基学习器的样本"
+      },
+      {
+        "name": "划分时最大特征比例",
+        "type": "float",
+        "function": "max_features",
+        "default": null,
+        "range": [0.1, 1.0],
+        "description": "设置每次划分时选择的最大特征比例"
+      },
+      {
+        "name": "内部节点分裂的最小样本数",
+        "type": "number",
+        "function": "min_samples_split",
+        "default": 2,
+        "range": [2, 10000],
+        "description": "设置内部节点分裂时，所需的最小样本数"
+      },
+      {
+        "name": "叶子节点的最小样本数",
+        "type": "number",
+        "function": "min_samples_leaf",
+        "default": 1,
+        "range": [1, 10000],
+        "description": "设置叶子节点中的最小样本数"
+      },
+      {
+        "name": "叶子节点中样本的最小权重",
+        "type": "float",
+        "function": "min_weight_fraction_leaf",
+        "default": 0.000,
+        "range": [0.0, 0.5],
+        "description": "设置叶子节点中样本的最小权重"
+      },
+      {
         "name": "是否导出结果",
         "type": "boolean",
         "function": "export_results",
@@ -57,7 +129,7 @@
         "name": "结果输出路径",
         "type": "text",
         "function": "output_path",
-        "default": ".\\output\\Adaboost分类\\{datetime}.txt",
+        "default": ".\\output\\GradientBoosting分类\\{datetime}.txt",
         "description": "结果导出路径，支持使用 {datetime} 占位符"
       }
     ]

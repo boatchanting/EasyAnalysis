@@ -1,16 +1,14 @@
 import pandas as pd
-from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.ensemble import AdaBoostClassifier
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import accuracy_score, classification_report
 import os
 from datetime import datetime
 
 def run(data, target_column, condition_columns, shuffle=True, train_ratio=0.8, cross_validate=False, 
-        random_state=42, export_results=False, output_path=".\\output\\GradientBoosting分类\\{datetime}.txt",
-        loss_function='deviance', criterion='friedman_mse', n_estimators=100, learning_rate=0.1, subsample=1.0,
-        max_features=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0):
+        random_state=42, export_results=False, output_path=".\\output\\Adaboost分类\\{datetime}.txt"):
     """
-    使用梯度提升树分类算法对数据进行分类，并导出结果到指定文件。
+    使用Adaboost分类算法对数据进行分类，并导出结果到指定文件。
     :param data: 数据源 (Pandas DataFrame)
     :param target_column: 目标列名
     :param condition_columns: 特征列名列表
@@ -20,15 +18,6 @@ def run(data, target_column, condition_columns, shuffle=True, train_ratio=0.8, c
     :param random_state: 随机种子
     :param export_results: 是否导出结果
     :param output_path: 结果输出路径，支持使用 {datetime} 占位符
-    :param loss_function: 损失函数
-    :param criterion: 节点分裂评价准则
-    :param n_estimators: 基学习器数量
-    :param learning_rate: 学习率
-    :param subsample: 无放回采样比例
-    :param max_features: 划分时最大特征比例
-    :param min_samples_split: 内部节点分裂的最小样本数
-    :param min_samples_leaf: 叶子节点的最小样本数
-    :param min_weight_fraction_leaf: 叶子节点中样本的最小权重
     """
     # 检查输入
     if not condition_columns or target_column not in data.columns:
@@ -45,19 +34,8 @@ def run(data, target_column, condition_columns, shuffle=True, train_ratio=0.8, c
         X, y, train_size=train_ratio, random_state=random_state
     )
     
-    # 初始化梯度提升树分类器
-    model = GradientBoostingClassifier(
-        loss=loss_function,
-        criterion=criterion,
-        n_estimators=n_estimators,
-        learning_rate=learning_rate,
-        subsample=subsample,
-        max_features=max_features,
-        min_samples_split=min_samples_split,
-        min_samples_leaf=min_samples_leaf,
-        min_weight_fraction_leaf=min_weight_fraction_leaf,
-        random_state=random_state
-    )
+    # 初始化Adaboost分类器
+    model = AdaBoostClassifier(random_state=random_state)
     
     if cross_validate:
         scores = cross_val_score(model, X, y, cv=5)
@@ -72,7 +50,7 @@ def run(data, target_column, condition_columns, shuffle=True, train_ratio=0.8, c
         acc = accuracy_score(y_test, y_pred)
         report = classification_report(y_test, y_pred)
         
-        result = f"梯度提升树分类器的准确率: {acc:.4f}\n分类报告:\n{report}"
+        result = f"Adaboost分类器的准确率: {acc:.4f}\n分类报告:\n{report}"
         print(result)
     
     # 如果需要导出结果
