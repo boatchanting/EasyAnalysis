@@ -13,6 +13,7 @@ __pycache__/
 /code/
 /test/
 /docs/
+/output/
 
 # 忽略特定的文件
 生成文件树.py
