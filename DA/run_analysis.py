@@ -41,8 +41,10 @@ def run_analysis(self):
         widget = self.parameter_widgets.get(param_name)
 
         if widget:
+            # 下拉框控件参数传递
             if isinstance(widget, QComboBox):
                 params[param_function] = widget.currentText()
+            # 输入框控件参数传递
             elif isinstance(widget, QLineEdit):
                 if isinstance(widget.validator(), QDoubleValidator):
                     try:
@@ -56,6 +58,8 @@ def run_analysis(self):
                     except ValueError:
                         self.status_label.setText(f"{param['name']} 输入无效")
                         return
+                else:
+                    params[param_function] = widget.text()
             elif isinstance(widget, QSpinBox):
                 params[param_function] = widget.value()
             elif isinstance(widget, QCheckBox):

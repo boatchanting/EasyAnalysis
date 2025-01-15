@@ -152,8 +152,12 @@ def load_algorithm_parameters(self):
                 }
                 """
                 widget = QLineEdit()
-                widget.setText(param.get('default', '请输入文本'))
-                self.parameter_widgets[param['name']] = widget         
+                widget.setPlaceholderText(f"请输入{param['name']}（默认：{param.get('default', '')}）")
+                if 'default' in param:
+                    widget.setText(param['default'])
+                # 将文本框控件添加到参数字典中
+                self.parameter_widgets[param['name']] = widget
+                self.parameter_layout.addWidget(widget)
 
             elif param['type'] == 'combo_box':
                 """
