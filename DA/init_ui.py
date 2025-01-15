@@ -1,6 +1,6 @@
 # DA/init_ui.py
 
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QPushButton, QSplitter, QTreeWidget, QLabel
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QPushButton, QSplitter, QTreeWidget, QLabel,QScrollArea
 from PyQt5.QtCore import Qt
 
 def init_ui(self):
@@ -8,7 +8,6 @@ def init_ui(self):
     初始化用户界面，设置主布局和各个控件。该方法使用QSplitter将界面分为左右两部分，
     左侧为算法选择区域，右侧为参数设置和执行区域。
     """
-    from PyQt5.QtWidgets import QWidget, QVBoxLayout, QPushButton, QSplitter, QTreeWidget, QLabel
 
     # 主布局使用 QSplitter
     main_splitter = QSplitter(Qt.Horizontal)
@@ -44,10 +43,13 @@ def init_ui(self):
 
     right_widget = QWidget()
     right_widget.setLayout(right_layout)
+    # 使用 QScrollArea 包裹右侧控件，确保右侧控件可滚动显示
+    scroll_area = QScrollArea()
+    scroll_area.setWidget(right_widget)
+    scroll_area.setWidgetResizable(True)  # 使 QScrollArea 可调整大小
 
-    main_splitter.addWidget(right_widget)
+    main_splitter.addWidget(scroll_area)
     main_splitter.setStretchFactor(1, 2)  # 设置右侧为可扩展区域
-
     # 主布局
     main_layout = QVBoxLayout()
     main_layout.addWidget(main_splitter)
