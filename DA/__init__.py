@@ -6,3 +6,4 @@ from .find_tree_item import find_tree_item
 from .select_color import select_color
 from .update_columns import update_columns
 from .clear_layout import clear_layout
+from .load_stylesheet import load_stylesheet

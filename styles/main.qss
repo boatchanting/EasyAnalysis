@@ -33,7 +33,7 @@ QTabWidget::pane {
 
 /* 按钮样式 */
 QPushButton {
-    background-color: #4CAF50;
+    background-color:rgba(9, 214, 207, 0.91);
     color: white;
     padding: 10px;
     border-radius: 5px;
@@ -58,7 +58,7 @@ QLineEdit, QTextEdit {
 }
 
 QLineEdit:focus, QTextEdit:focus {
-    border: 1px solid #4CAF50;
+    border: 1px solid rgb(36, 231, 245);
 }
 
 /* 标签样式 */
@@ -95,5 +95,5 @@ QComboBox:editable {
 }
 
 QComboBox:focus {
-    border: 1px solid #4CAF50;
+    border: 1px solid rgb(28, 223, 237);
 }

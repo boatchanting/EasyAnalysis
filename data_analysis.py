@@ -10,9 +10,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QDoubleValidator, QIntValidator
 import importlib
 # 导入 数据分析模块 包中的函数
-from DA import load_algorithm_parameters, run_analysis, init_ui, load_algorithms, find_tree_item, select_color, update_columns, clear_layout
-
-
+from DA import load_algorithm_parameters, run_analysis, init_ui, load_algorithms, find_tree_item, select_color, update_columns, clear_layout,load_stylesheet
 
 class DataAnalysis(QWidget):
     def __init__(self):
@@ -22,6 +20,9 @@ class DataAnalysis(QWidget):
         self.current_algorithm = None
         self.current_parameters = {}
         self.parameter_widgets = {}  # 保存参数控件，方便获取值
+
+    # 在类中绑定由模块导入的函数
+    load_stylesheet = load_stylesheet    
 
     def update_columns(self, data):
         """

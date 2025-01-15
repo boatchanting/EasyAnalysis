@@ -8,7 +8,8 @@ def init_ui(self):
     初始化用户界面，设置主布局和各个控件。该方法使用QSplitter将界面分为左右两部分，
     左侧为算法选择区域，右侧为参数设置和执行区域。
     """
-
+    # 加载数据分析模块的样式表
+    self.load_stylesheet("styles/data_analysis.qss")
     # 主布局使用 QSplitter
     main_splitter = QSplitter(Qt.Horizontal)
 
