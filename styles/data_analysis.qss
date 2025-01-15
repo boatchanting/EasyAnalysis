@@ -1,4 +1,8 @@
 /*数据分析模块设置*/
+/*文字大小*/
+QLabel{
+    font-size: 16px;
+}
 QWidget {
     background-color:rgb(255, 255, 255); /* 背景 */
 }
@@ -38,20 +42,42 @@ QLabel {
 
 /* 参数设置区域的输入控件样式 */
 QLineEdit{
-    border: 1px solid #97d3e0;
-    border-radius: 4px;
-    padding: 2px 6px;
-    background-color: #e0f7ff;
-    color: #006064;
+    border: 1px solid #97d3e0;// 边框颜色
+    border-radius: 4px;// 边框圆角
+    padding: 2px 6px;// 内边距
+    background-color: #e0f7ff;// 背景颜色
+    color: #006064;// 文字颜色
 }
 QPushButton{
-    background-color: #00acc1;
-    border: none;
-    color: white;
-    padding: 5px 15px;
-    text-align: center;
-    border-radius: 4px;
+    background-color: #00acc1;// 按钮背景颜色
+    border: none;// 边框
+    color: white;// 文字颜色
+    padding: 5px 15px;// 内边距
+    text-align: center;// 文字居中
+    border-radius: 4px;// 边框圆角
 }
 QPushButton:hover{
     background-color: #00838f;
 }
+QCheckBox::indicator {
+    width: 20px;
+    height: 20px;
+    color:rgb(28, 233, 240);
+}
+QCheckBox::indicator:unchecked {
+    color:rgb(28, 233, 240);
+}
+QCheckBox::indicator:checked {
+    color:rgb(255, 255, 255);
+}
+QComboBox{
+    border: 1px solid #97d3e0;
+    border-radius: 4px;
+    padding: 2px 6px;
+    background-color: #e0f7ff;
+    color:rgb(0, 187, 193);
+}
+QComboBox QAbstractItemView{
+    border: 1px solid #97d3e0;
+    background-color: #e0f7ff;
+    }
