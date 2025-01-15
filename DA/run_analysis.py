@@ -46,22 +46,23 @@ def run_analysis(self):
                 params[param_function] = widget.currentText()
             # 输入框控件参数传递
             elif isinstance(widget, QLineEdit):
-                if isinstance(widget.validator(), QDoubleValidator):
+                if isinstance(widget.validator(), QDoubleValidator):#浮点数输入框参数传递
                     try:
                         params[param_function] = float(widget.text())
                     except ValueError:
                         self.status_label.setText(f"{param['name']} 输入无效")
                         return
-                elif isinstance(widget.validator(), QIntValidator):
+                elif isinstance(widget.validator(), QIntValidator):#整数输入框参数传递
                     try:
                         params[param_function] = int(widget.text())
                     except ValueError:
                         self.status_label.setText(f"{param['name']} 输入无效")
                         return
                 else:
-                    params[param_function] = widget.text()
+                    params[param_function] = widget.text()# 文字输入框参数传递         
             elif isinstance(widget, QSpinBox):
                 params[param_function] = widget.value()
+            # 勾选框参数传递    
             elif isinstance(widget, QCheckBox):
                 params[param_function] = widget.isChecked()
             elif isinstance(widget, QListWidget):
