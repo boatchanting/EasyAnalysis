@@ -1,3 +1,4 @@
+# method/机器学习（简陋版）/机器学习分类/Adaboost分类.py
 import pandas as pd
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.model_selection import train_test_split, cross_val_score

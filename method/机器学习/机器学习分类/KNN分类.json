@@ -1,0 +1,93 @@
+{
+    "algorithm": "KNN分类",
+    "description": "基于K近邻算法的分类方法，支持用户自定义参数",
+    "parameters": [
+        {
+            "name": "条件列名",
+            "type": "multi_column_select",
+            "function": "condition_columns",
+            "description": "请选择作为特征的列名（支持多选）"
+        },
+        {
+            "name": "目标列",
+            "type": "column_select",
+            "function": "target_column",
+            "description": "请选择目标列（标签列）"
+        },
+        {
+            "name": "近邻数",
+            "type": "number",
+            "function": "n_neighbors",
+            "default": 5,
+            "range": [1, 10000],
+            "description": "设置K近邻算法的近邻数"
+        },
+        {
+            "name": "距离度量方式",
+            "type": "combo_box",
+            "function": "metric",
+            "options": ["euclidean", "manhattan", "chebyshev"],
+            "default": "euclidean",
+            "description": "选择距离度量方式"
+        },
+        {
+            "name": "搜索算法",
+            "type": "combo_box",
+            "function": "algorithm",
+            "options": ["auto", "kd_tree", "ball_tree", "brute"],
+            "default": "auto",
+            "description": "选择搜索算法"
+        },
+        {
+            "name": "是否进行数据洗牌",
+            "type": "boolean",
+            "function": "shuffle",
+            "default": false,
+            "description": "选择是否在数据划分时进行洗牌"
+        },
+        {
+            "name": "训练集占比",
+            "type": "float",
+            "function": "train_size",
+            "default": 0.8,
+            "range": [0.1, 0.9],
+            "description": "设置训练集占总数据的比例"
+        },
+        {
+            "name": "交叉验证折数",
+            "type": "combo_box",
+            "function": "cv",
+            "options": ["None", "3", "4", "5"],
+            "default": "None",
+            "description": "选择交叉验证的折数"
+        },
+        {
+            "name": "是否导出分类中心结果",
+            "type": "boolean",
+            "function": "export_centers",
+            "default": false,
+            "description": "选择是否导出分类中心结果"
+        },
+        {
+            "name": "导出路径",
+            "type": "text",
+            "function": "output_path",
+            "default": "./output/KNN分类/",
+            "description": "设置导出分类中心结果的路径"
+        },
+        {
+            "name": "是否可视化",
+            "type": "boolean",
+            "function": "visualize",
+            "default": false,
+            "description": "选择是否显示分类结果的可视化图表"
+        },
+        {
+            "name": "可视化图表名称",
+            "type": "text",
+            "function": "chart_title",
+            "default": "KNN分类",
+            "description": "设置可视化图表的标题"
+        }
+    ]
+}
