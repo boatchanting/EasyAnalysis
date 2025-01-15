@@ -1,5 +1,5 @@
 {
-    "algorithm": "梯度提升树",
+    "algorithm": "Adaboost分类",
     "description": "使用梯度提升树分类算法对数据进行分类",
     "parameters": [
       {
