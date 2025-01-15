@@ -1,14 +1,14 @@
 /*数据分析模块设置*/
 QWidget {
-    background-color:rgb(236, 236, 236); /* 浅灰色背景 */
+    background-color:rgb(255, 255, 255); /* 背景 */
 }
 
 /* 树状选择控件样式 */
 QTreeWidget {
     border: 1px solid #97d3e0; /* 边框颜色 */
-    background-color: #e0f7ff; /* 背景颜色 */
+    background-color: rgba(236, 236, 236, 0.5); /* 背景颜色 */
     alternate-background-color: #b3e5fc; /* 替换行背景颜色 */
-    color: #006064; /* 文字颜色 */
+    color:rgb(0, 0, 0); /* 文字颜色 */
 }
 
 /* 当鼠标悬停在树状控件的项目上时 */
@@ -37,10 +37,21 @@ QLabel {
 }
 
 /* 参数设置区域的输入控件样式 */
-QLineEdit, QComboBox, QTextEdit {
+QLineEdit{
     border: 1px solid #97d3e0;
     border-radius: 4px;
     padding: 2px 6px;
     background-color: #e0f7ff;
     color: #006064;
+}
+QPushButton{
+    background-color: #00acc1;
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    border-radius: 4px;
+}
+QPushButton:hover{
+    background-color: #00838f;
 }
