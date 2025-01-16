@@ -1,0 +1,77 @@
+{
+  "algorithm": "折线图（2列）",
+  "description": "生成包含两列定量变量的折线图，支持1或2个坐标轴，提供折线填充功能。",
+  "parameters": [
+      {
+          "name": "第一类定量变量",
+          "type": "column_select",
+          "function": "col1",
+          "description": "请选择作为第一类定量变量的列名"
+      },
+      {
+          "name": "第二类定量变量",
+          "type": "column_select",
+          "function": "col2",
+          "description": "请选择作为第二类定量变量的列名"
+      },
+      {
+          "name": "折线1配色",
+          "type": "color",
+          "function": "line1_color",
+          "default": "#a4133c",
+          "description": "选择第一条折线的颜色"
+      },
+      {
+          "name": "折线2配色",
+          "type": "color",
+          "function": "line2_color",
+          "default": "#ff4d6d",
+          "description": "选择第二条折线的颜色"
+      },
+      {
+          "name": "折线1线型",
+          "type": "combo_box",
+          "options": ["-", "--", "-.", ":"],
+          "function": "line1_style",
+          "default": "-",
+          "description": "选择第一条折线的线型"
+      },
+      {
+          "name": "折线2线型",
+          "type": "combo_box",
+          "options": ["-", "--", "-.", ":"],
+          "function": "line2_style",
+          "default": "-",
+          "description": "选择第二条折线的线型"
+      },
+      {
+          "name": "采用1/2个坐标轴",
+          "type": "boolean",
+          "function": "use_two_axes",
+          "default": false,
+          "description": "是否采用两个坐标轴（默认为一个坐标轴）"
+      },
+      {
+          "name": "是否将两折线中间用灰色连接",
+          "type": "boolean",
+          "function": "fill_between_lines",
+          "default": true,
+          "description": "是否将两条折线之间的区域用灰色连接（默认为连接）"
+      },
+      {
+          "name": "可视化图表名称",
+          "type": "text",
+          "function": "chart_title",
+          "default": "折线图（2列）",
+          "description": "设置可视化图表的标题"
+      },
+      {
+          "name": "字体大小",
+          "type": "number",
+          "function": "font_size",
+          "default": 16,
+          "range": [1, 100],
+          "description": "设置图表中文字的字体大小"
+      }
+  ]
+}
