@@ -1,4 +1,4 @@
-# \method\散点图（2列）.py
+# \method\绘图\散点图(2列,赛博朋克).py
 import matplotlib.pyplot as plt
 import mplcyberpunk
 
